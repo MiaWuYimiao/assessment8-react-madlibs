@@ -31,8 +31,10 @@ Answer the following questions below:
     - The parent component is re-rendered along with its children
 
 - What is a controlled component?
+  > In React, a controlled component is a component that is controlled by React state. 
 
 - What is an uncontrolled component?
+  > If React is not in control of the form state, this is called an uncontrolled component.
 
 - What is the purpose of the `key` prop when rendering a list of components?
   > **key** is a special string attr to include when creating lists of elements.
@@ -43,9 +45,23 @@ Answer the following questions below:
   > Because item order may change or items can be deleted. This can cause performance problems or bugs with component state.
 
 - Describe useEffect.  What use cases is it used for in React components?
+  > useEffect is a built in hook in React for "side effects". It can be used to fetch data, start a timer and manually changing the DOM.  
+  It's very common that when a component renders, we can use useEffect  to fetch data from an external data source or API. Or it can be used to fetch data not after the first render, but after a later state change. useEffect can also be used to clear intervals or timeouts, remove an event listener, unsubscribing and disconnect from a socket.
 
 - What does useRef do?  Does a change to a ref value cause a rerender of a component?
+  > useRef is another built-in hook in React. It returns a mutable object with a key of current, whose value is equal to the initial value passes into the hook. The object persists across renders. Mutating the object does not trigger a re-render.
 
 - When would you use a ref? When wouldn't you use one?
+  > When I need to access an underlying DOM element, setting up or clearing timers.  
+    useRef should not be used to access the DOM and make changes(toggle classes, set text, etc).
 
 - What is a custom hook in React? When would you want to write one?
+  > Custom Hooks
+    - A JavaScript function that typically uses built in hooks
+    - The function name of a custom hook should start with use (useToggleState)
+    - Custom hooks can be reusable across different components
+  > When to write one?
+    - Same business logic inside of multiple components
+    - Business logic cluttering up a single component
+    - Refactor code
+
